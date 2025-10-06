@@ -1,0 +1,29 @@
+IDENTIFICATION DIVISION.
+       PROGRAM-ID. CALCULATOR.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 NUM1 PIC 9(3) VALUE 0.
+       01 NUM2 PIC 9(3) VALUE 0.
+       01 RESULT PIC 9(5) VALUE 0.
+       01 TEMP PIC 9(5) VALUE 0.
+
+       PROCEDURE DIVISION.
+       MAIN.
+           PERFORM SETUP.
+           PERFORM DO-CALCULATION.
+           PERFORM SHOW-RESULT.
+           STOP RUN.
+
+       SETUP.
+           MOVE 25 TO NUM1.
+           MOVE 10 TO NUM2.
+
+       DO-CALCULATION.
+           ADD NUM1 TO NUM2 GIVING RESULT.
+           MULTIPLY RESULT BY 2 GIVING TEMP.
+           MOVE TEMP TO RESULT.
+
+       SHOW-RESULT.
+           DISPLAY "Final Result".
+           DISPLAY RESULT.

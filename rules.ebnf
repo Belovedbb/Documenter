@@ -1,0 +1,48 @@
+<program> ::= <identification_division> <data_division> <procedure_division>
+<identification_division> ::= "IDENTIFICATION" "DIVISION" "."  "PROGRAM-ID" "." <identifier> "."
+<data_division> ::= "DATA" "DIVISION" "." <working_storage_section> | "DATA" "DIVISION" "."
+<working_storage_section> ::= "WORKING-STORAGE" "SECTION" "." <variable_list> | empty
+<procedure_division> ::= "PROCEDURE" "DIVISION" "." <paragraph_list>
+
+<variable_list> ::= <variable_list> <variable> | <variable>
+<variable> ::= <level_number> <identifier> <picture_clause> <value_clause> "."
+             | <level_number> <identifier> <picture_clause> "."
+             | <level_number> <identifier> <value_clause> "."
+             | <level_number> <identifier> "."
+<level_number> ::= "01" | "02" | "03" | ... | "49" | "66" | "77" | "88"
+<picture_clause> ::= "PIC" <identifier> | "PICTURE" <identifier>
+<value_clause> ::= "VALUE" <number> | "VALUE" <string> | "VALUE" <identifier>
+
+<paragraph_list> ::= <paragraph_list> <paragraph> | <paragraph>
+<paragraph> ::= <identifier> "." <statement_list>
+<statement_list> ::= <statement_list> <statement> | <statement> | empty
+
+<statement> ::= <move_statement> | <arithmetic_statement> | <compute_statement> | <perform_statement> | <if_statement> | <display_statement> | <stop_statement>
+<move_statement> ::= "MOVE" <source> "TO" <identifier> "."
+<source> ::= <identifier> | <number> | <string>
+
+<arithmetic_statement> ::= <add_statement> | <subtract_statement> | <multiply_statement>
+<add_statement> ::= "ADD" <operand> "TO" <identifier> "." | "ADD" <operand> "TO" <identifier> "GIVING" <identifier> "."
+<subtract_statement> ::= "SUBTRACT" <operand> "FROM" <identifier> "."
+<multiply_statement> ::= "MULTIPLY" <operand> "BY" <identifier> "."
+<operand> ::= <identifier> | <number>
+
+<compute_statement> ::= "COMPUTE" <identifier> "=" <expression> "."
+<expression> ::= <expression> "+" <expression> | <expression> "-" <expression> | <expression> "*" <expression> | <expression> "/" <expression> | <identifier> | <number> | "(" <expression> ")"
+
+<perform_statement> ::= "PERFORM" <identifier> "." | "PERFORM" <identifier> "THRU" <identifier> "." | "PERFORM" <identifier> "UNTIL" <condition> "."
+<if_statement> ::= "IF" <condition> "THEN" <statement_list> "END-IF" "." | "IF" <condition> <statement_list> "END-IF" "." | "IF" <condition> "THEN" <statement_list> "ELSE" <statement_list> "END-IF" "."
+<condition> ::= <identifier> <relational_operator> <value>
+<relational_operator> ::= ">" | "<" | "=" | ">=" | "<=" | "<>"
+<value> ::= <number> | <identifier> | <string>
+
+<display_statement> ::= "DISPLAY" <display_item> "."
+<display_item> ::= <identifier> | <string> | <number>
+<stop_statement> ::= "STOP" "RUN" "." | "EXIT" "." | "GOBACK" "."
+
+<identifier> ::= <letter> { <letter> | <digit> | "-" }*
+<number> ::= <digit>+ [ "." <digit>+ ]
+<string> ::= '"' <any_char>* '"' | "'" <any_char>* "'"
+<letter> ::= "A" | "B" | ... | "Z" | "a" | "b" | ... | "z"
+<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+<empty> ::=

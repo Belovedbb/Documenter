@@ -1,0 +1,5 @@
+.env
+*.output
+.idea
+*parsetab.py
+*parser.out

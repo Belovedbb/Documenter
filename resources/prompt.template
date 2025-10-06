@@ -1,0 +1,87 @@
+================================================================================
+COBOL PROGRAM DOCUMENTATION: [PROGRAM-NAME]
+================================================================================
+
+PROGRAM SUMMARY
+================================================================================
+
+Main Entry Point: [first procedure name]
+Total Statements: [count]
+Total Procedures: [count]
+Total Variables: [count]
+
+Program Purpose Analysis:
+  [Describe what the program does based on variable names and logic]
+  It likely calculates/processes:
+    - [key operation 1]
+    - [key operation 2]
+
+Key Output Variables:
+  - [VAR-NAME]: [purpose description]
+  - [VAR-NAME]: [purpose description]
+
+EXECUTION FLOW TRACE
+================================================================================
+
+Program execution follows this call sequence:
+
+> [MAIN-PROCEDURE]
+  |--> [CALLED-PROCEDURE-1]
+    |--> [CALLED-PROCEDURE-2]
+  |--> [CALLED-PROCEDURE-3]
+
+VISUAL CALL GRAPH
+================================================================================
+
+PROCEDURE CALL HIERARCHY
+
+├- [MAIN-PROCEDURE]
+|  ├- [CALLED-PROCEDURE-1]
+|  |  ├- [SUB-PROCEDURE]
+   ├- [CALLED-PROCEDURE-2]
+
+DATA FLOW DIAGRAM
+
+[PROCEDURE-NAME]
+    |
+    ├--> [VARIABLE-1]
+    ├--> [VARIABLE-2]
+
+DATA LINKAGE ANALYSIS
+================================================================================
+
+Showing how data flows between procedures:
+
+[VARIABLE-NAME]:
+  Purpose: [description]
+  Data Flow:
+    [WRITER-PROC] --[writes]--> [VARIABLE] --[reads]--> [READER-PROC]
+
+DETAILED PROCEDURE ANALYSIS
+================================================================================
+
+--------------------------------------------------------------------------------
+PROCEDURE: [NAME]
+--------------------------------------------------------------------------------
+Purpose: [inferred purpose]
+Called by: [caller list]
+Calls: [callee list]
+
+Input Variables (reads): [var list]
+Output Variables (writes): [var list]
+
+Statements ([count] total):
+  1. [statement description]
+  2. [statement description]
+
+VARIABLE REFERENCE
+================================================================================
+
+01 [VAR-NAME]
+    PIC: [picture]
+    VALUE: [value]
+    Purpose: [inferred purpose]
+
+================================================================================
+END OF DOCUMENTATION
+================================================================================
