@@ -1,5 +1,5 @@
 
-<p align="center"><h1 align="center">MAINFRAME DOCUMENTER</h1></p>
+<p align="center"><h1 align="center">DOCUMENTER</h1></p>
 <p align="center">
 	<em><code>❯ A poc comparison between static documenter, natural llm and ast token llm</code></em>
 </p>
